@@ -1,7 +1,11 @@
 import { Typography } from "@mui/material";
 import { Box, Container } from "@mui/system";
-import ImageCollage from "./ImageCollage";
-import Accordian from "./Accordian";
+import ImageCollage from "../ImageCollage";
+import Accordian from "../Accordian";
+import Paper from "@mui/material/Paper";
+import BottomNavigation from "@mui/material/BottomNavigation";
+import BasicModal from "../Modal";
+
 const Tour = () => {
   return (
     <Container maxWidth="md">
@@ -34,9 +38,11 @@ const Tour = () => {
         </Typography>
       </Box>
 
-      <Box sx={{
-        height: '50vh'
-      }}>
+      <Box
+        sx={{
+          height: "50vh",
+        }}
+      >
         <Typography variant="h6" component="h2" marginTop={2}>
           Frequently Asked Questions
         </Typography>
@@ -45,6 +51,15 @@ const Tour = () => {
           <Accordian />
         </Box>
       </Box>
+
+      <Paper
+        sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }}
+        elevation={3}
+      >
+        <BottomNavigation>
+          <BasicModal />
+        </BottomNavigation>
+      </Paper>
     </Container>
   );
 };
